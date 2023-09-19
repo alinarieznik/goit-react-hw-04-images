@@ -85,8 +85,8 @@ export default function App() {
 
   const toggleModal = (largeImageURL, tags) => {
     setShowModal(showModal => !showModal);
-    setModalImage(largeImageURL);
-    setModalImageAlt(tags);
+    setModalImage(showModal => largeImageURL);
+    setModalImageAlt(showModal => tags);
   };
 
   return (
