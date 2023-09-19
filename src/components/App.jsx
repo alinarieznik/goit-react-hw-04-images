@@ -72,11 +72,12 @@ export default function App() {
     }
   };
 
-  const handleFormSubmit = query => {
-    // for one more same render doesnt work
-    setQuery(query);
-    setImages([]);
-    setPage(1);
+  const handleFormSubmit = nextQuery => {
+    if (query !== nextQuery) {
+      setQuery(nextQuery);
+      setImages([]);
+      setPage(1);
+    }
   };
 
   const handleLoadMore = () => {
